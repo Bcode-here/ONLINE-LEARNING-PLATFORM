@@ -14,7 +14,7 @@
 **MENTOR NAME**: NEELA SANTHOSH KUMAR
 
 # Discription
-Certainly! Here's a brief description of an online learning platform built using HTML and CSS:
+Certainly! Here's a brief description of an simple online learning platform built using HTML,Javascript and CSS:
 
 ---
 
@@ -53,6 +53,11 @@ The **Online Learning Platform** is a responsive and user-friendly website desig
    - Advanced layout techniques using flexbox and grid.  
    - Responsive styling with media queries for optimal performance across all devices.  
    - Animations and transitions for a dynamic user experience.
+ 
+  **Javascript**
+    -JavaScript can be used to add a login button and sign in botton to a website using APIs and Web Components.
+   - Adding JavaScript to a website .Place the <script> tag in the <head> or <body> section of the HTML
+     The <head> section is often used to keep JavaScript code contained
 
 ---
 
