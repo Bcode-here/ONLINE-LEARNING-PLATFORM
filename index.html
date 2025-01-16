@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Learning Platform</title>
+  <link rel="stylesheet" href="style.css" class="css">
+  <!-- <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3e8ff;
+      color: #4b0082;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4b0082;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .video {
+      margin-bottom: 20px;
+    }
+    .video iframe {
+      width: 50%;
+      height: 320px; -->
+
+    <!-- }
+    .quiz {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .progress {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e6e6fa;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4b0082;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #360062;
+    }
+  </style> -->
+</head>
+<body>
+  <header>
+    <h1>Online Learning Platform</h1>
+  </header>
+
+  <div class="container">
+    <!-- Lesson 1 -->
+    <div class="video">
+      <h2>Lesson 1: Introduction to HTML</h2>
+      <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="quiz">
+      <h3>Quiz: What does HTML stand for?</h3>
+      <form id="quiz-form-1">
+        <label>
+          <input type="radio" name="answer-1" value="correct"> HyperText Markup Language
+        </label><br>
+        <label>
+          <input type="radio" name="answer-1" value="wrong"> HighText Machine Language
+        </label><br>
+        <label>
+          <input type="radio" name="answer-1" value="wrong"> HyperTool Machine Language
+        </label><br><br>
+        <button type="button" onclick="submitQuiz('quiz-form-1', 'quiz-result-1')">Submit Answer</button>
+      </form>
+      <p id="quiz-result-1"></p>
+    </div>
+
+    <!-- Lesson 2 -->
+    <div class="video">
+      <h2>Lesson 2: Introduction to CSS</h2>
+      <iframe src="https://www.youtube.com/embed/yfoY53QXEnI" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="quiz">
+      <h3>Quiz: What does CSS stand for?</h3>
+      <form id="quiz-form-2">
+        <label>
+          <input type="radio" name="answer-2" value="wrong"> Creative Style Sheets
+        </label><br>
+        <label>
+          <input type="radio" name="answer-2" value="correct"> Cascading Style Sheets
+        </label><br>
+        <label>
+          <input type="radio" name="answer-2" value="wrong"> Computer Style Sheets
+        </label><br><br>
+        <button type="button" onclick="submitQuiz('quiz-form-2', 'quiz-result-2')">Submit Answer</button>
+      </form>
+      <p id="quiz-result-2"></p>
+    </div>
+
+    <!-- Lesson 3 -->
+    <div class="video">
+      <h2>Lesson 3: Introduction to JavaScript</h2>
+      <iframe src="https://www.youtube.com/embed/hdI2bqOjy3c" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="quiz">
+      <h3>Quiz: What is JavaScript used for?</h3>
+      <form id="quiz-form-3">
+        <label>
+          <input type="radio" name="answer-3" value="correct"> Making web pages interactive
+        </label><br>
+        <label>
+          <input type="radio" name="answer-3" value="wrong"> Styling web pages
+        </label><br>
+        <label>
+          <input type="radio" name="answer-3" value="wrong"> Structuring web pages
+        </label><br><br>
+        <button type="button" onclick="submitQuiz('quiz-form-3', 'quiz-result-3')">Submit Answer</button>
+      </form>
+      <p id="quiz-result-3"></p>
+    </div>
+
+    <div class="progress">
+      <h3>Progress Tracker</h3>
+      <p id="progress-status">Lessons: Incomplete</p>
+      <button onclick="markComplete()">Mark Lessons as Complete</button>
+    </div>
+  </div>
+
+  <script>
+    function submitQuiz(formId, resultId) {
+      const selected = document.querySelector(`#${formId} input[name^='answer']:checked`);
+      const result = document.getElementById(resultId);
+
+      if (!selected) {
+        result.textContent = 'Please select an answer!';
+        result.style.color = 'red';
+        return;
+      }
+
+      if (selected.value === 'correct') {
+        result.textContent = 'Correct! Great job!';
+        result.style.color = 'green';
+      } else {
+        result.textContent = 'Incorrect. Try again!';
+        result.style.color = 'red';
+      }
+    }
+
+    function markComplete() {
+      const progress = document.getElementById('progress-status');
+      progress.textContent = 'Lessons: Complete';
+      progress.style.color = 'green';
+
+      // Store progress in localStorage
+      localStorage.setItem('lessons', 'complete');
+    }
+
+    // Load progress on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const progress = localStorage.getItem('lessons');
+      if (progress === 'complete') {
+        const progressStatus = document.getElementById('progress-status');
+        progressStatus.textContent = 'Lessons: Complete';
+        progressStatus.style.color = 'green';
+      }
+    });
+  </script>
+</body>
+</html>
