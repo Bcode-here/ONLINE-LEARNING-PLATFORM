@@ -57,3 +57,4 @@ The **Online Learning Platform** is a responsive and user-friendly website desig
 ---
 
 # OUTPUT
+![Image](https://github.com/user-attachments/assets/5cc139bb-0ec3-4ddb-aad3-99ec7ec09969)
